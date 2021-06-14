@@ -16,20 +16,20 @@ enum { st_Unknown = -1, st_LEDInit=0, st_LEDOn=1, st_LEDOff=2, st_Delay=3, numSt
 struct s_stateType States[numStates+1] =
 {
 	// State	  Function Name,	Init Function	 Completion
-	{ st_LEDInit, "Init Led",		InitLed_Start, InitLed_End },
-	{ st_LEDOn,   "LED On",			LEDOn_Start,   LEDOn_End   },
-	{ st_LEDOff,  "LED Off",		LEDOff_Start,  LEDOff_End  },
-	{ st_Delay,   "Delay",			Delay_Start,   Delay_End   },
+	{ st_LEDInit, 	"Init Led",		InitLed_Start, InitLed_End },
+	{ st_LEDOn,   	"LED On",		LEDOn_Start,   LEDOn_End   },
+	{ st_LEDOff,  	"LED Off",		LEDOff_Start,  LEDOff_End  },
+	{ st_Delay,   	"Delay",		Delay_Start,   Delay_End   },
 	{ st_Unknown, "", NULL, NULL }
 };
 
 struct s_behavior Behavior[numStates] =
 {
 	// State,		Next,			Error
-	{ st_LEDInit,	st_LEDOn,		st_LEDInit },
+	{ st_LEDInit,		st_LEDOn,		st_LEDInit },
 	{ st_LEDOn,		st_LEDOff,		st_LEDInit },
-	{ st_LEDOff,	st_Delay,		st_LEDInit },
-	{ st_Unknown,	st_LEDOn,		st_LEDInit }
+	{ st_LEDOff,		st_Delay,		st_LEDInit },
+	{ st_Delay,		st_LEDOn,		st_LEDInit }
 };
 
 //------------------------------------------------------------------------------------
