@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Program name="NoLED" type="LED">
+    <States>
+        <State id="1" nextID="2" name="LED Off" code="@" delaySeconds="1" delayMS="0" PINState="0" />
+        <State id="2" nextID="1" name="LED On" code="@" delaySeconds="1" delayMS="0" PINState="1" />
+    </States>
+</Program>

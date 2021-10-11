@@ -8,7 +8,7 @@ When you use this file, make sure that the following directory structures are us
 This file defines what devices the program will control while it's running.
 /etc/IBIS/conf/system.xml
 
-This firectory will read in every xml file in order to have all possible behaviours defined for the devices defined above.
+This directory will read in every xml file in order to have all possible behaviors defined for the devices defined above.
 /etc/IBIS/conf.d/
 
 

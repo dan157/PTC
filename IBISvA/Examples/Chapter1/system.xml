@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<System name="Main Control" id="100">
+    <Devices>
+        <Device id="1" name="BLUE " type="LED" PIN="0" INITSTATE="LOW" INITMODE="OUTPUT" STATES="Blink1" />
+        <Device id="2" name="WHITE" type="LED" PIN="1" INITSTATE="LOW" INITMODE="OUTPUT" STATES="NoLED" />
+        <Device id="3" name="GREEN" type="LED" PIN="2" INITSTATE="LOW" INITMODE="OUTPUT" STATES="FastBlink1" />
+        <Device id="4" name="RED  " type="LED" PIN="3" INITSTATE="LOW" INITMODE="OUTPUT" STATES="AB2" />
+    </Devices>
+</System>

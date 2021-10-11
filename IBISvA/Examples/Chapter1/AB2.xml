@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Program name="AB2" type="LED">
+    <States>
+        <State id="1" nextID="2" name="LED Off" code="@" delaySeconds="0" delayMS="250" PINState="0" />
+        <State id="2" nextID="3" name="LED On" code="@" delaySeconds="0" delayMS="250" PINState="1" />
+        <State id="3" nextID="4" name="LED Off" code="@" delaySeconds="0" delayMS="250" PINState="0" />
+        <State id="4" nextID="5" name="LED On" code="@" delaySeconds="0" delayMS="250" PINState="1" />
+        <State id="5" nextID="6" name="LED Off" code="@" delaySeconds="1" delayMS="0" PINState="0" />
+        <State id="6" nextID="1" name="LED On" code="@" delaySeconds="1" delayMS="0" PINState="1" />
+    </States>
+</Program>
