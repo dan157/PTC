@@ -1,35 +1,33 @@
 #pragma once
-
+/*! \file PrgMgmt.h
+ * \brief This file defines the PrgMgmt class
+ */
 #include "prgParent.h"
 
-#define maxPrograms	100
+#define maxPrograms	100		//!< Current max number of programs to store, this is just a quick number and can be changed at anytime
 
+/*!
+ * \class PrgMgmt
+ * \brief This class stores into memory the State Machine program based on XML
+ */
 class PrgMgmt : public prgParent
 {
-	// The number of programs that were found and loaded
-	int numPrograms;
-	// The array of devices that were found
-	prgParent* PrgArray[maxPrograms];
+	int numPrograms;								//!< The number of programs that were found and loaded
+	prgParent* PrgArray[maxPrograms];				//!< The array of devices that were found
 
 public:
-	// This is the constructor for this class, and performs the initialization processes that are needed to perform it's tasks while running.
-	PrgMgmt();
-
-	// This is the destructor and will clean up anything that was allocated while running
-	~PrgMgmt();
+	PrgMgmt();										//!< This is the constructor for this class, and performs the initialization processes that are needed to perform it's tasks while running.
+	~PrgMgmt();										//!< This is the destructor and will clean up anything that was allocated while running
 
 public:
-	// Used for debugging
-	virtual void CallOut() override { std::cout << "PrgMgmt" << std::endl; }
-	// This function will check to see if there are any devices to add, if they exist it will be added
-	int findPrograms();
+	virtual void CallOut() override { std::cout << "PrgMgmt" << std::endl; }	//!< Used for debugging
+	int findPrograms();								//!< This function will check to see if there are any devices to add, if they exist it will be added
+
 public:
-	// This function searches for the State Machine for a program
-	prgParent* FindMachine(const char* progName);
+	prgParent* FindMachine(const char* progName);	//!< This function searches for the State Machine for a program
+
 private:
-	// This function reads in the State Machine information as needed
-	void ReadStateMachine(const char* fileName);
-private:
-	std::string ProgramName;
+	void ReadStateMachine(const char* fileName);	//!< This function reads in the State Machine information as needed
+	std::string ProgramName;						//!< This is the name of the program
 };
 

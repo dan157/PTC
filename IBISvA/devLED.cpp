@@ -1,16 +1,19 @@
+/*! \file devLED.cpp
+ * \brief This file contains the implementation code for the devLED class
+ */
 #include "devLED.h"
 #include <wiringPi.h>
 #include <iostream>
 
-// In order to help with debugging, it will only be turned on per module instead of globally
-// That way we can focus on only the area in question, just comment this out when done
+//! In order to help with debugging, it will only be turned on per module instead of globally
+/*! That way we can focus on only the area in question, just comment this out when done */
 #define DBGMOD
 
 //----------------------------------------------------------------------------------------
 // This class is used for regular standard LED lights
 //----------------------------------------------------------------------------------------
 
-// This is the constructor for this class, and performs the initialization processes that are needed to perform it's tasks while running.
+//! This is the constructor for this class, and performs the initialization processes that are needed to perform it's tasks while running.
 devLED::devLED() : devParent()
 {
 #ifdef DBGMOD
@@ -24,13 +27,21 @@ devLED::devLED() : devParent()
 	nextState = LEDStates::Unknown;
 }
 
-// This is the destructor and will clean up anything that was allocated while running
+//! This is the destructor and will clean up anything that was allocated while running
 devLED::~devLED()
 {
 	WrapUp();
 }
 
-// This sets up the values based on whatever is in the configuration file
+//! This sets up the values based on whatever is in the configuration file
+/*!
+ * \param dID This is the device ID number
+ * \param dName This is the name of the device
+ * \param pinNumber This is the PIN number used for communicating with the device
+ * \param modeValue This will specify if this is a INPUT device or OUTPUT device
+ * \param iState This is the initial state for this device when initializing
+ * \param stateXNL This is the name of the State Machine Program file
+ */
 void devLED::setValues(int dID, const char* dName, int pinNumber, const char* modeValue, const char* iState,const char* stateXML)
 {
 	Pin = pinNumber;
@@ -47,7 +58,7 @@ void devLED::setValues(int dID, const char* dName, int pinNumber, const char* mo
 #endif
 }
 
-// This function performs anything that needs to be done before closing this device
+//! This function performs anything that needs to be done before closing this device
 void devLED::WrapUp()
 {
 	if (bWrappedUp == false)
@@ -64,7 +75,7 @@ void devLED::WrapUp()
 	}
 }
 
-// This structure is used for translating the machine state to a string
+//! This structure is used for translating the machine state to a string
 static struct
 {
 	LEDStates sVal;
@@ -76,7 +87,11 @@ static struct
 	{ LEDStates::Unknown, NULL                 }
 };
 
-// This function returns the state name
+//! This function returns the state name
+/*!
+ * \param stateVal This is the state value that will be changed to a string
+ * \return string value of the name of the state
+ */
 const char* devLED::GetStateName(LEDStates stateVal)
 {
 	for (register int i = 0; sName[i].rcStr != NULL; i++)
@@ -84,7 +99,7 @@ const char* devLED::GetStateName(LEDStates stateVal)
 	return "Bad Value";
 }
 
-// This function handles the state machine for this device
+//! This function handles the state machine for this device
 void devLED::HandleStates()
 {
 	if (curState==LEDStates::Unknown) InitLed_Start();
@@ -103,7 +118,7 @@ void devLED::HandleStates()
 	}
 }
 
-// This function sets up the current state information, this allows us to send notifications and setup statistics, etc later on
+//! This function sets up the current state information, this allows us to send notifications and setup statistics, etc later on
 void devLED::SetCurState(LEDStates cState, bool (devLED::* eFun)())
 {
 #ifdef DBGMOD
@@ -124,7 +139,7 @@ void devLED::SetCurState(LEDStates cState, bool (devLED::* eFun)())
 	endFun = eFun;
 }
 
-// This function sets up the next state information, this allows us to send notifications and setup statistics, etc later on
+//! This function sets up the next state information, this allows us to send notifications and setup statistics, etc later on
 void devLED::SetNextState(LEDStates cState, void (devLED::* sFun)())
 {
 #ifdef DBGMOD
@@ -134,7 +149,7 @@ void devLED::SetNextState(LEDStates cState, void (devLED::* sFun)())
 	startFun = sFun;
 }
 
-// This function will find the entry with the lowest ID to determine the first entry and then return a pointer to that, if none it will return NULL
+//! This function will find the entry with the lowest ID to determine the first entry and then return a pointer to that, if none it will return NULL
 void devLED::FindFirstProgramEntry()
 {
 	curPrg = ledPrg->FindFirstProgramEntry();
@@ -146,7 +161,7 @@ void devLED::FindFirstProgramEntry()
 #endif
 }
 
-// This functin will go to the next program entry
+//! This function will go to the next program entry
 void devLED::FindNextProgramEntry()
 {
 	curPrg = ledPrg->FindNextProgramEntry(curPrg);
@@ -158,7 +173,7 @@ void devLED::FindNextProgramEntry()
 #endif
 }
 
-// Initialize the state of the GPIO port used for the LED
+//! Initialize the state of the GPIO port used for the LED
 void devLED::InitLed_Start()
 {
 	if (PinMode == PinModes::PinOutput) ::digitalWrite(Pin, initState);
@@ -166,7 +181,7 @@ void devLED::InitLed_Start()
 	SetCurState(LEDStates::LEDInit, &devLED::InitLed_End);
 }
 
-// Since this state really doesn't have to wait for anything, just immediately move to the next state
+//! Since this state really doesn't have to wait for anything, just immediately move to the next state
 bool devLED::InitLed_End()
 {
 	SetNextState(LEDStates::Prg_Pin, &devLED::Prg_Pin_Start);
@@ -180,7 +195,7 @@ bool devLED::InitLed_End()
 	return true;
 }
 
-// Now setting up the program version of the state machine
+//! Now setting up the program version of the state machine
 void devLED::Prg_Pin_Start()
 {
 #ifdef DBGMOD
@@ -194,7 +209,7 @@ void devLED::Prg_Pin_Start()
 #endif
 }
 
-// The end function for this state
+//! The end function for this state
 bool devLED::Prg_Pin_End()
 {
 	if (chkDelay(curPrg->delaySecs, curPrg->delayMS))

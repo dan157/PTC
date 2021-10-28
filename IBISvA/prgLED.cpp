@@ -1,3 +1,6 @@
+/*! \file prgLED.cpp
+ * \brief This file implements the prgLED class
+ */
 #include "prgLED.h"
 
 // In order to help with debugging, it will only be turned on per module instead of globally

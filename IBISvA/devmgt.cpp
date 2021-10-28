@@ -1,11 +1,14 @@
+/*! \file devmgt.cpp
+ * \brief This file contains the implementation code for the devmgt class
+ */
 #include "devmgt.h"
 #include "pugixml.hpp"
 #include "devLED.h"
 #include <string>
 
 
-// In order to help with debugging, it will only be turned on per module instead of globally
-// That way we can focus on only the area in question, just comment this out when done
+ //! In order to help with debugging, it will only be turned on per module instead of globally
+ /*! That way we can focus on only the area in question, just comment this out when done */
 #define DBGMOD
 
 //----------------------------------------------------------------------------------------
@@ -54,7 +57,10 @@ devmgt::~devmgt()
 #endif
 }
 
-// This function will check to see if there are any devices to add, if they exist it will be added
+//!< This function will check to see if there are any devices to add, if they exist it will be added
+/*!
+ * \param pInfo This is a pointer to the program management class allowing us to link the two together
+ */
 int devmgt::findDevices(PrgMgmt* pInfo)
 {
 	DeviceType test1;

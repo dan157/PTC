@@ -1,3 +1,6 @@
+/*! \file PrgMgmt.cpp
+ * \brief This file implements the PrgMgmt class
+ */
 #include "PrgMgmt.h"
 #include "prgLED.h"
 #include "pugixml.hpp"
@@ -5,8 +8,8 @@
 #include <cstring>
 #include <dirent.h>
 
-// In order to help with debugging, it will only be turned on per module instead of globally
-// That way we can focus on only the area in question, just comment this out when done
+//! In order to help with debugging, it will only be turned on per module instead of globally
+/*! That way we can focus on only the area in question, just comment this out when done */
 #define DBGMOD
 
 //----------------------------------------------------------------------------------------
@@ -112,9 +115,7 @@ void PrgMgmt::ReadStateMachine(const char *fileName)
 		{
 #ifdef DBGMOD
 			for (pugi::xml_attribute attr = state.first_attribute(); attr; attr = attr.next_attribute())
-			{
 				std::cout << " " << attr.name() << "=" << attr.value();
-			}
 			std::cout << std::endl;
 #endif
 			// The common values
