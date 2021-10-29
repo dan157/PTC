@@ -1,5 +1,5 @@
 # PTC
-This repository was designed to be used when watching along with the programming video series from my YouTube channel Pacific Tech Center
+This repository can be used when watching along with the programming video series from my YouTube channel Pacific Tech Center or by reading the documentation as needed.
 
 <H3>Introduction to this channel and the current goals</H3>
 <blockquote>Video: https://www.youtube.com/watch?v=VfsuFwxGJdo</blockquote>
