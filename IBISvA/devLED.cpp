@@ -40,7 +40,7 @@ devLED::~devLED()
  * \param pinNumber This is the PIN number used for communicating with the device
  * \param modeValue This will specify if this is a INPUT device or OUTPUT device
  * \param iState This is the initial state for this device when initializing
- * \param stateXNL This is the name of the State Machine Program file
+ * \param stateXML This is the name of the State Machine Program file
  */
 void devLED::setValues(int dID, const char* dName, int pinNumber, const char* modeValue, const char* iState,const char* stateXML)
 {

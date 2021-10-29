@@ -45,7 +45,7 @@ public:
 	devLED();						//!< This is the constructor for this class, and performs the initialization processes that are needed to perform it's tasks while running.
 	~devLED();						//!< This is the destructor and will clean up anything that was allocated while running
 
-	virtual void setValues(int dID, const char *dName, int pinNumber,const char *modeValue, const char* initState,const char* stateXML) override;
+	virtual void setValues(int dID, const char *dName, int pinNumber,const char *modeValue, const char* initState,const char* stateXML) override;	//!< This sets up the values based on whatever is in the configuration file
 
 public:
 	virtual void CallOut() override { std::cout << "devLED" << std::endl; }	//!< Used for debugging

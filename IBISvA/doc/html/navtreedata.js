@@ -12,6 +12,7 @@ var NAVTREE =
         [ "Step 6: Run the IBIS program \"./IBISvA\" or redirect to /dev/null if you don't want to see the debug code \"./IBISvA > /dev/null\"", "index.html#step6", null ]
       ] ]
     ] ],
+    [ "PTC", "md__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

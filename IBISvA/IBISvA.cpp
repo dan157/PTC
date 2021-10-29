@@ -9,7 +9,7 @@
  * 
  * The GitHub location for the original code is https://github.com/dan157/PTC and the YouTube channel used to watch the videos to explain various features of this system can be found searching for the channel called "Pacific Tech Center".
  * 
- * \author DWoods
+ * \author Dan Woods
  * \version 0.1
  * \copyright MIT (c) 2021 (See License file located in the directory for more details)
  * \warning There are no expectations of warranty or liability of any kind

@@ -1,3 +1,6 @@
+/*! \file devParent.cpp
+ * \brief This file implements the devParent class
+ */
 #include "devParent.h"
 
 // This structure is just used to convert back and forth between the device type and name
