@@ -1,3 +1,5 @@
+from virl2_client import ClientLibrary
+
 class NodeInfo:
     def __init__(self,lab):
         self.lab = lab
@@ -5,6 +7,7 @@ class NodeInfo:
         self.curY = 0
         self.nodeName = ""
         self.imageName = ""
+
 
     def SetupNode(self,nName,iName,x,y):
         self.nodeName = nName
@@ -26,9 +29,10 @@ class SetupLab:
         self.XCurr = 0
         self.YCurr = 0
         self.numNodes = 0
+        self.client = ClientLibrary("https://192.168.250.35", "admin", "Cisco123!", ssl_verify=False)
         self.nodes = []
     
-        self.lab = client.create_lab(labName)
+        self.lab = self.client.create_lab(labName)
 
     def AddNode(self,nName,iName):
         ni = NodeInfo(self.lab)
