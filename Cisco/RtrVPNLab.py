@@ -1,10 +1,6 @@
 import textwrap 
 from pathlib import Path
-from virl2_client import ClientLibrary
-
-exec(compile(source=textwrap.dedent(open('SetupLab.py').read()), filename='SetupLab.py', mode='exec'))
-
-client = ClientLibrary("https://192.168.250.35", "admin", "Cisco123!", ssl_verify=False)
+from SetupLab import SetupLab
 
 sl = SetupLab("RtrVPNLab")
 
