@@ -20,9 +20,9 @@ This repository can be used when watching along with the programming video serie
 <blockquote>Video: https://www.youtube.com/watch?v=bnseCxXlr9Q&t=6s</blockquote>
 
 <H3>Cisco DMVPN Lab</H3>
-<H4>This is a CCNP and CCIE level lab, and the goal is to setup a basic DMVPN configuration and perform various level of tests and validation in the process</H4>
+<H4>This is a CCNP and CCIE level lab, and the goal is to setup a basic DMVPN configuration and perform various level of validation in the process</H4>
 <blockquote>Video: https://www.youtube.com/watch?v=3maF2ukm04c&t=1184s</blockquote>
 
 <H3>Cisco GETVPN Lab</H3>
-<H4>This is a CCNP and CCIE level lab, and the goal is to setup a basic GETVPN configuration and be able to perform various level of tests and validation in the process</H4>
+<H4>This is a CCNP and CCIE level lab, and the goal is to setup a basic GETVPN configuration, with 2 Key Servers for redundancy</H4>
 <blockquote>Video: https://www.youtube.com/watch?v=3maF2ukm04c&t=1184s</blockquote>
