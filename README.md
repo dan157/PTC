@@ -25,4 +25,9 @@ This repository can be used when watching along with the programming video serie
 
 <H3>Cisco GETVPN Lab</H3>
 <H4>This is a CCNP and CCIE level lab, and the goal is to setup a basic GETVPN configuration, with 2 Key Servers for redundancy</H4>
-<blockquote>Video: https://www.youtube.com/watch?v=3maF2ukm04c&t=1184s</blockquote>
+<blockquote>Video: https://youtu.be/di4UamAh8iE</blockquote>
+
+<H3>Cisco FLEXVPN Lab 1</H3>
+<H4>This is a CCNP and CCIE level lab, and the goal is to setup 3 different configurations for FLEXVPN configuration, with 2 HUB routers for redundancy.  We have Site-to-Site, Hub-Spoke, and Spoke-to-Spoke configurations all combined in this lab.</H4>
+<blockquote>Video: https://youtu.be/jiwLN0AaFgA</blockquote>
+
