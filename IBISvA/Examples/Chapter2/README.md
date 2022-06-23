@@ -1,7 +1,7 @@
 # PTC
-This repository can be used when watching along with the programming video series from my YouTube channel Pacific Tech Center or by reading the documentation as needed.
+This repository was designed to be used when watching along with the programming video series from my YouTube channel Pacific Tech Center
 
-The files in this directory is used to support the first Chapter of the IBIS system, version A.
+The files in this directory is used to support the second Chapter of the IBIS system, version A.
 
 When you use this file, make sure that the following directory structures are used:
 
