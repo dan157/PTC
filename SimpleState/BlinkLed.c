@@ -1,7 +1,7 @@
 #include <wiringPi.h>
 #include <stdio.h>
 
-#define LedPin 0
+#define LedPin 1
 
 int main(void)
 {
